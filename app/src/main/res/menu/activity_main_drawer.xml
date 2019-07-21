@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/nav_home"
+            android:title="@string/nav_home" />
+
+        <item
+            android:id="@+id/nav_mypick"
+            android:icon="@drawable/nav_mypick"
+            android:title="@string/nav_mypick" />
+
+    <group
+        android:id="@+id/menu_top2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_clockconverter"
+            android:icon="@drawable/nav_clockconverter"
+            android:title="@string/nav_clockconverter" />
+        <item
+            android:id="@+id/nav_weatherforecast"
+            android:icon="@drawable/nav_weatherforecast"
+            android:title="@string/nav_weatherforecast" />
+        <item
+            android:id="@+id/nav_currencyconverter"
+            android:icon="@drawable/nav_currencyconverter"
+            android:title="@string/nav_currencyconverter" />
+    </group>
+
+    <group
+        android:id="@+id/menu_top3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_visitnepal2020"
+            android:icon="@drawable/nav_visitnepal2020"
+            android:title="@string/nav_visitnepal2020" />
+    </group>
+    <group
+        android:id="@+id/menu_top4"
+        android:checkableBehavior="single">
+    <item
+        android:id="@+id/nav_login_signup"
+        android:icon="@drawable/nav_login_signup"
+        android:title="@string/nav_login_signup" />
+
+    <item
+        android:id="@+id/nav_setting"
+        android:icon="@drawable/nav_setting"
+        android:title="@string/nav_setting" />
+    </group>
+    <item
+        android:id="@+id/nav_help"
+        android:icon="@drawable/nav_help"
+        android:title="@string/nav_help" />
+
+    <item
+        android:id="@+id/nav_aboutus"
+        android:icon="@drawable/nav_aboutus"
+        android:title="@string/nav_aboutus" />
+    <item
+        android:id="@+id/nav_feedback"
+        android:icon="@drawable/nav_feedback"
+        android:title="@string/nav_feedback" />
+    <item
+        android:id="@+id/nav_share"
+        android:icon="@drawable/nav_share"
+        android:title="@string/nav_share" />
+
+
+</menu>
