@@ -16,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
 import com.eversoft.generalfeatures.nav_contactUs_activity;
+import com.eversoft.generalfeatures.nav_help_activity;
 import com.eversoft.services.nav_login_activity;
 
 public class MainActivity extends AppCompatActivity
@@ -93,6 +94,10 @@ public class MainActivity extends AppCompatActivity
             MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_aboutus) {
             Intent intent = new Intent(MainActivity.this, nav_contactUs_activity.class);
+            MainActivity.this.startActivity(intent);
+        }
+        else if (id == R.id.nav_help) {
+            Intent intent = new Intent(MainActivity.this, nav_help_activity.class);
             MainActivity.this.startActivity(intent);
         }
 
