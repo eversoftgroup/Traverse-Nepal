@@ -15,6 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
+import com.eversoft.generalfeatures.nav_contactUs_activity;
+import com.eversoft.services.nav_login_activity;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -85,6 +88,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_mypick) {
             Intent myIntent = new Intent(MainActivity.this, nav_mypick_activity.class);
             MainActivity.this.startActivity(myIntent);
+        }   else if (id == R.id.nav_login_signup) {
+            Intent intent = new Intent(MainActivity.this, nav_login_activity.class);
+            MainActivity.this.startActivity(intent);
+        } else if (id == R.id.nav_aboutus) {
+            Intent intent = new Intent(MainActivity.this, nav_contactUs_activity.class);
+            MainActivity.this.startActivity(intent);
         }
 
 
