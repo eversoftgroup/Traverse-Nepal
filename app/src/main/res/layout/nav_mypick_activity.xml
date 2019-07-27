@@ -67,7 +67,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 app:layout_constraintVertical_bias="1.0" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/nav_my_pick_more_vert"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
