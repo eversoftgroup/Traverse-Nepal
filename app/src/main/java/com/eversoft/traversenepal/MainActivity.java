@@ -17,6 +17,7 @@ import android.view.Menu;
 
 import com.eversoft.generalfeatures.nav_contactUs_activity;
 import com.eversoft.services.nav_login_activity;
+import com.eversoft.generalfeatures.nav_feedback_activity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -94,6 +95,15 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_aboutus) {
             Intent intent = new Intent(MainActivity.this, nav_contactUs_activity.class);
             MainActivity.this.startActivity(intent);
+        } else if(id == R.id.nav_feedback) {
+            Intent intent = new Intent(MainActivity.this, nav_feedback_activity.class);
+            MainActivity.this.startActivity(intent);
+        } else if (id == R.id.nav_share) {
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "https://facebook.com/eversoftgroup");
+            shareIntent.setType("text/plain");
+            startActivity(Intent.createChooser(shareIntent, "share via "));
         }
 
 
