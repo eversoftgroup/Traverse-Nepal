@@ -1,9 +1,11 @@
 package com.eversoft.traversenepal;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,12 +16,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.LinearLayout;
 
+import com.eversoft.adapters.Place_detail;
 import com.eversoft.generalfeatures.nav_contactUs_activity;
 import com.eversoft.generalfeatures.nav_help_activity;
 import com.eversoft.services.nav_login_activity;
 import com.eversoft.generalfeatures.nav_feedback_activity;
 import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
+
+import static android.widget.ListPopupWindow.WRAP_CONTENT;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -45,6 +51,25 @@ public class MainActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        //linearlayout clickable
+        LinearLayout linearLayoutBtn = findViewById(R.id.linearlayoutBtn);
+        linearLayoutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Place_detail.class);
+                startActivity(intent);
+            }
+        });
+
+        //cardview expandable
+        /*@SuppressLint("WrongViewCast") final CardView expandableCardview = findViewById(R.id.expandablecard);
+        expandableCardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expandableCardview.setLayoutParams(new CardView.LayoutParams(CardView.LayoutParams.WRAP_CONTENT, 300));
+            }
+        });*/
     }
 
     @Override

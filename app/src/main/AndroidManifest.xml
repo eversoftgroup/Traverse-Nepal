@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".nav_mypick_detail_activity"></activity>
+        <activity android:name="com.eversoft.adapters.Place_detail"></activity>
+        <activity android:name=".nav_mypick_detail_activity" />
         <activity
             android:name="com.eversoft.services.nav_signup_activity"
             android:parentActivityName="com.eversoft.services.nav_login_activity" />
