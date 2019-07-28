@@ -19,6 +19,7 @@ import com.eversoft.generalfeatures.nav_contactUs_activity;
 import com.eversoft.generalfeatures.nav_help_activity;
 import com.eversoft.services.nav_login_activity;
 import com.eversoft.generalfeatures.nav_feedback_activity;
+import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -109,7 +110,11 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_help) {
             Intent intent = new Intent(MainActivity.this, nav_help_activity.class);
             MainActivity.this.startActivity(intent);
+        }else if (id == R.id.nav_visitnepal2020) {
+            Intent intent = new Intent(MainActivity.this, nav_visitnepal2020_activity.class);
+            MainActivity.this.startActivity(intent);
         }
+        
 
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
