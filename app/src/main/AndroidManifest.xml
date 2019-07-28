@@ -28,7 +28,8 @@
         <activity android:name="com.eversoft.services.nav_currencyconverter" />
         <activity android:name="com.eversoft.services.nav_weatherforecast_activity" />
         <activity android:name="com.eversoft.services.nav_clockconverter_activity" />
-        <activity android:name=".nav_mypick_activity" />
+        <activity android:name=".nav_mypick_activity"
+                    android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
