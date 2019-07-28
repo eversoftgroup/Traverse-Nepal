@@ -10,6 +10,6 @@ public class nav_help_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_help_activity);
+        setContentView(R.layout.nav_help_activity);
     }
 }

@@ -1,4 +1,4 @@
-package com.eversoft.services;
+package com.eversoft.settings;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +10,6 @@ public class nav_signup_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_signup_activity);
+        setContentView(R.layout.nav_signup_activity);
     }
 }

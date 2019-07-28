@@ -1,4 +1,4 @@
-package com.eversoft.services;
+package com.eversoft.settings;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +13,7 @@ public class nav_login_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_login_activity);
+        setContentView(R.layout.nav_login_activity);
 
         Button BtnSignUp =  findViewById(R.id.login_btn_signup);
         BtnSignUp.setOnClickListener(new View.OnClickListener(){

@@ -29,5 +29,16 @@
     <string name="nav_login_signup">Login / Signup</string>
     <string name="nav_share">Share</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment 1</string>
+    <string name="hello_blank_fragment1">Hello blank fragment 2</string>
+    <string name="tab1">Photos</string>
+    <string name="tab2">Videos</string>
+
+    <!-- Bottom nav item -->
+    <string name="menu_explore">Explore</string>
+    <string name="menu_places">Places</string>
+    <string name="menu_booking">Booking</string>
+
 
 </resources>

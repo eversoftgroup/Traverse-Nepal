@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eversoft.services.nav_signup_activity">
+    tools:context="com.eversoft.settings.nav_signup_activity">
 
     <EditText
         android:id="@+id/signup_firstname"
