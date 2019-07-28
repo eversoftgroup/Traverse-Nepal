@@ -21,7 +21,8 @@
                     android:parentActivityName=".MainActivity" />
         <activity android:name="com.eversoft.generalfeatures.nav_help_activity"
                     android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.settings.nav_setting_activity" />
+        <activity android:name="com.eversoft.settings.nav_setting_activity"
+                    android:parentActivityName=".MainActivity"/>
         <activity android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
                     android:parentActivityName=".MainActivity"/>
         <activity android:name="com.eversoft.services.nav_currencyconverter" />
