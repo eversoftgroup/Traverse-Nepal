@@ -12,6 +12,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+import com.eversoft.services.nav_About_us;
 
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(MainActivity.this, nav_login_activity.class);
             MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_aboutus) {
-            Intent intent = new Intent(MainActivity.this, nav_contactUs_activity.class);
+            Intent intent = new Intent(MainActivity.this, nav_About_us.class);
             MainActivity.this.startActivity(intent);
         } else if(id == R.id.nav_feedback) {
             Intent intent = new Intent(MainActivity.this, nav_feedback_activity.class);
@@ -141,9 +142,6 @@ public class MainActivity extends AppCompatActivity
         }
         
 
-
-            DrawerLayout drawer = findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
             return true;
         }
     }

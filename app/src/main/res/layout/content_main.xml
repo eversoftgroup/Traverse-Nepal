@@ -18,7 +18,6 @@
         layout="@layout/content_main_signlecardview" android:layout_height="wrap_content"
         android:layout_width="wrap_content"/>
 
-    <include layout="@layout/expandable_card" android:layout_height="wrap_content" android:layout_width="match_parent"/>
 
 
 </LinearLayout>
