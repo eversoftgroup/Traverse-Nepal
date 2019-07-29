@@ -24,7 +24,8 @@
             android:parentActivityName="com.eversoft.services.nav_login_activity" />
         <activity
             android:name="com.eversoft.services.nav_login_activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
         <activity
             android:name="com.eversoft.generalfeatures.nav_feedback_activity"
             android:parentActivityName=".MainActivity" />
