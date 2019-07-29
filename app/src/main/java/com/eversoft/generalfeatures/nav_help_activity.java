@@ -17,16 +17,16 @@ public class nav_help_activity extends AppCompatActivity {
 
     Help_List_Item[] listArr = new Help_List_Item[]{
 
-            new Help_List_Item("Question 1"),
-            new Help_List_Item("Question 2"),
+            new Help_List_Item("Question 1", "Answer 1"),
+            new Help_List_Item("Question 2", "Answer 2"),
 
-            new Help_List_Item("Question 3"),
+            new Help_List_Item("Question 3", "Answer 1"),
 
-            new Help_List_Item("Question 4"),
+            new Help_List_Item("Question 4", "Answer 1"),
 
-            new Help_List_Item("Question 5"),
+            new Help_List_Item("Question 5", "Answer 1"),
 
-            new Help_List_Item("Question 6")
+            new Help_List_Item("Question 6", "Answer 1")
     };
 
     @Override
@@ -36,5 +36,7 @@ public class nav_help_activity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.nav_help_recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new help_activity_list_adapter(listArr));
+
+
     }
 }
