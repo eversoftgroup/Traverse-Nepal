@@ -28,4 +28,22 @@ public class Session {
         String password = prefs.getString("password","");
         return password;
     }
+
+    public void setApiKey(String key) {
+        prefs.edit().putString("key", key).commit();
+    }
+
+    public String getApiKey() {
+        String key = prefs.getString("key","");
+        return key;
+    }
+
+    public void setUserId(int id) {
+        prefs.edit().putInt("userId", id).commit();
+    }
+
+    public Integer getUserId() {
+        int id = prefs.getInt("userId",-1);
+        return id;
+    }
 }

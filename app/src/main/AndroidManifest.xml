@@ -3,6 +3,7 @@
     package="com.eversoft.traversenepal">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,26 +11,38 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.eversoft.settings.nav_signup_activity"
-                    android:parentActivityName="com.eversoft.settings.nav_login_activity"></activity>
-        <activity android:name="com.eversoft.settings.nav_login_activity"
-                    android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.generalfeatures.nav_feedback_activity"
-                    android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.generalfeatures.nav_contactUs_activity"
-                    android:parentActivityName=".MainActivity" />
-        <activity android:name="com.eversoft.generalfeatures.nav_help_activity"
-                    android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.settings.nav_setting_activity"
-                    android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
-                    android:parentActivityName=".MainActivity"/>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.eversoft.settings.setting_profile"
+                    android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name="com.eversoft.settings.nav_signup_activity"
+            android:parentActivityName="com.eversoft.settings.nav_login_activity" />
+        <activity
+            android:name="com.eversoft.settings.nav_login_activity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light"/>
+        <activity
+            android:name="com.eversoft.generalfeatures.nav_feedback_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.generalfeatures.nav_contactUs_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.generalfeatures.nav_help_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.settings.nav_setting_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name="com.eversoft.services.nav_currencyconverter" />
         <activity android:name="com.eversoft.services.nav_weatherforecast_activity" />
         <activity android:name="com.eversoft.services.nav_clockconverter_activity" />
-        <activity android:name=".nav_mypick_activity"
-                    android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".nav_mypick_activity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

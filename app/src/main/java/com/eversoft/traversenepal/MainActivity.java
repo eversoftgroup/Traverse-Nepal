@@ -29,8 +29,11 @@ import android.widget.Toast;
 import com.eversoft.adapters.RecycleViewAdapter;
 import com.eversoft.generalfeatures.nav_contactUs_activity;
 import com.eversoft.models.home_model;
+import com.eversoft.services.nav_About_us;
+import com.eversoft.services.nav_currencyconverter;
 import com.eversoft.settings.nav_login_activity;
 import com.eversoft.generalfeatures.nav_feedback_activity;
+import com.eversoft.settings.setting_profile;
 import com.eversoft.utils.Session;
 import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
 import com.eversoft.settings.nav_setting_activity;
@@ -138,12 +141,13 @@ public class MainActivity extends AppCompatActivity
             Intent myIntent = new Intent(MainActivity.this, nav_mypick_activity.class);
             MainActivity.this.startActivity(myIntent);
         }  else if (id == R.id.nav_profile) {
-            Toast.makeText(MainActivity.this, "Open profile activity", Toast.LENGTH_SHORT).show();
+            Intent myIntent = new Intent(MainActivity.this, setting_profile.class);
+            MainActivity.this.startActivity(myIntent);
         }else if (id == R.id.nav_login_signup) {
             Intent intent = new Intent(MainActivity.this, nav_login_activity.class);
             MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_aboutus) {
-            Intent intent = new Intent(MainActivity.this, nav_contactUs_activity.class);
+            Intent intent = new Intent(MainActivity.this, nav_About_us.class);
             MainActivity.this.startActivity(intent);
         } else if(id == R.id.nav_feedback) {
             Intent intent = new Intent(MainActivity.this, nav_feedback_activity.class);
@@ -156,6 +160,9 @@ public class MainActivity extends AppCompatActivity
             MainActivity.this.startActivity(intent);
         } else if(id == R.id.nav_setting) {
             Intent intent = new Intent(MainActivity.this, nav_setting_activity.class);
+            MainActivity.this.startActivity(intent);
+        }else if(id == R.id.nav_currencyconverter) {
+            Intent intent = new Intent(MainActivity.this, nav_currencyconverter.class);
             MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_share) {
             Intent shareIntent = new Intent();
