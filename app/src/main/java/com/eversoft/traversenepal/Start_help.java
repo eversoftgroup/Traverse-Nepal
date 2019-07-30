@@ -53,6 +53,8 @@ public class Start_help extends FragmentActivity implements help_sim.OnFragmentI
                 //visible button finish if page is at  last
                 if(Integer.valueOf(viewPager.getCurrentItem()) == 2){
                     FinishBtn.setVisibility(View.VISIBLE);
+                } else {
+                    FinishBtn.setVisibility(View.GONE);
                 }
 
             }

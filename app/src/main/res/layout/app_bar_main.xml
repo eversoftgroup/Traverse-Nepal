@@ -11,13 +11,19 @@
         android:layout_width="match_parent">
 
 
-
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:toolbarId="@+id/toolbar"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="?attr/colorPrimary">
+
+            <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/activity_main_toolbar_viewPager">
+
+            </android.support.v4.view.ViewPager>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -26,7 +32,7 @@
                 android:layout_height="?attr/actionBarSize"
                 app:title="Traverse Nepal" />
 
-          </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -40,7 +46,9 @@
             android:orientation="vertical">
 
             <include layout="@layout/content_main" />
+
             <include layout="@layout/content_main" />
+
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
@@ -52,4 +60,13 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:clickable="true" />
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:background="#A8A2A2"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom"
+        android:elevation="20dp"
+
+        app:menu="@menu/bottom_nav_menu"/>
 </android.support.design.widget.CoordinatorLayout>

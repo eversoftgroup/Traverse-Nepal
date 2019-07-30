@@ -2,9 +2,12 @@ package com.eversoft.traversenepal;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +15,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.MenuItem;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
+
+import com.eversoft.adapters.mainActivity_toolbar_Adapter;
+import com.eversoft.fragments.currencyconverter;
+import com.eversoft.fragments.weather;
 import com.eversoft.services.nav_About_us;
 
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +37,7 @@ import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
 import static android.widget.ListPopupWindow.WRAP_CONTENT;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, currencyconverter.OnFragmentInteractionListener, weather.OnFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +70,11 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        ViewPager toolbarViewPager = findViewById(R.id.activity_main_toolbar_viewPager);
+        PagerAdapter pagerAdapter = new mainActivity_toolbar_Adapter(getSupportFragmentManager());
+
+        toolbarViewPager.setAdapter(pagerAdapter);
 
         //cardview expandable
         /*@SuppressLint("WrongViewCast") final CardView expandableCardview = findViewById(R.id.expandablecard);
@@ -108,8 +120,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
-            // Intent intent = new Intent(MainActivity.this, MainActivity);
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_mypick) {
             Intent myIntent = new Intent(MainActivity.this, nav_mypick_activity.class);
             MainActivity.this.startActivity(myIntent);
@@ -142,4 +154,9 @@ public class MainActivity extends AppCompatActivity
 
             return true;
         }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
+}
