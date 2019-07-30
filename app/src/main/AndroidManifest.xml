@@ -25,6 +25,8 @@
         <activity
             android:name="com.eversoft.generalfeatures.nav_feedback_activity"
             android:parentActivityName=".MainActivity" />
+        <activity android:name="com.eversoft.services.nav_About_us"
+                android:parentActivityName=".MainActivity"/>
         <activity
             android:name="com.eversoft.generalfeatures.nav_contactUs_activity"
             android:parentActivityName=".MainActivity" />
@@ -37,9 +39,12 @@
         <activity
             android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name="com.eversoft.services.nav_currencyconverter" />
-        <activity android:name="com.eversoft.services.nav_weatherforecast_activity" />
-        <activity android:name="com.eversoft.services.nav_clockconverter_activity" />
+        <activity android:name="com.eversoft.services.nav_currencyconverter"
+                android:parentActivityName=".MainActivity"/>
+        <activity android:name="com.eversoft.services.nav_weatherforecast_activity"
+                    android:parentActivityName=".MainActivity"/>
+        <activity android:name="com.eversoft.services.nav_clockconverter_activity"
+                    android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".nav_mypick_activity"
             android:parentActivityName=".MainActivity" />

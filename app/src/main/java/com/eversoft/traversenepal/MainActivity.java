@@ -3,12 +3,15 @@ package com.eversoft.traversenepal;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.CardView;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
@@ -21,12 +24,28 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.LinearLayout;
+
+import com.eversoft.adapters.Place_detail;
+import com.eversoft.generalfeatures.nav_contactUs_activity;
+import com.eversoft.generalfeatures.nav_help_activity;
+
+import static android.widget.ListPopupWindow.WRAP_CONTENT;
+
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.widget.EditText;
 import android.widget.HeaderViewListAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.annotation.SuppressLint;
+
 import com.eversoft.adapters.RecycleViewAdapter;
+import com.eversoft.adapters.mainActivity_toolbar_Adapter;
+import com.eversoft.fragments.currencyconverter;
+import com.eversoft.fragments.weather;
 import com.eversoft.generalfeatures.nav_contactUs_activity;
 import com.eversoft.models.home_model;
 import com.eversoft.services.nav_About_us;
@@ -44,7 +63,9 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,
+        currencyconverter.OnFragmentInteractionListener,
+        weather.OnFragmentInteractionListener {
 
     private Session session;
 
@@ -84,18 +105,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    public void horizontalScroll(){
-        ArrayList<home_model> items = new ArrayList<>();
-        RecycleViewAdapter viewAdapter = new RecycleViewAdapter(this,items);
-        RecyclerView recyclerView = findViewById(R.id.home_recycleView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setAdapter(viewAdapter);
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
-        for(int i=0; i < 4; i++){
-            items.add(new home_model(R.drawable.ic_launcher_background, "Title " + i));
-            viewAdapter.notifyDataSetChanged();
-        }
     }
+
 
     @Override
     public void onBackPressed() {
@@ -137,6 +151,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_mypick) {
             Intent myIntent = new Intent(MainActivity.this, nav_mypick_activity.class);
             MainActivity.this.startActivity(myIntent);
