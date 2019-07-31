@@ -32,19 +32,21 @@
                     android:text="1 UK dollar equals" />
 
                 <TextView
-                    android:gravity="center"
-                    android:textSize="30sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="160 Nepali Rupee" />
+                    android:gravity="center"
+                    android:text="160 Nepali Rupee"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:gravity="top|center_horizontal"
-                    android:textSize="14sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="top|center_horizontal"
                     android:text="Jun 20, 11:14 UTC"
-                    android:layout_weight="1"/>
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -77,6 +79,7 @@
                 android:layout_marginBottom="53dp"
                 android:text="TOTAL"
                 android:textSize="22sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -84,8 +87,8 @@
 
             <EditText
                 android:id="@+id/nav_cc_txt2"
-                android:layout_width="147dp"
-                android:layout_height="50dp"
+                android:layout_width="152dp"
+                android:layout_height="49dp"
                 android:ems="10"
                 android:hint="Currency"
                 android:inputType="number|numberDecimal"
@@ -127,10 +130,10 @@
 
             <Spinner
                 android:id="@+id/nav_CC_spinner2"
-                android:layout_width="117dp"
-                android:layout_height="45dp"
-                android:layout_marginEnd="28dp"
-                android:layout_marginRight="28dp"
+                android:layout_width="123dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
                 android:layout_marginBottom="108dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />

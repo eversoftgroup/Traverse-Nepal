@@ -5,26 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="8dp"
     tools:context="com.eversoft.adapters.Place_detail">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/activity_place_detail_img"
         android:layout_width="match_parent"
         android:layout_height="283dp"
         android:layout_weight="0"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        android:padding="8dp"
+        tools:src="@drawable/hkr" />
 
 
     <TextView
+        android:id="@+id/activity_place_detail_Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        android:paddingHorizontal="6dp"
+        android:text="Chitwan National Park"
         android:textSize="20sp"
-        android:text="Traverse Nepal"
-        android:paddingHorizontal="6dp"/>
+        android:textStyle="bold" />
+
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/activity_place_detail_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="This is test this the body of the thing" />
+        android:text="The Chitwan National Park (CNP) is a world heritage property, and it also contains a Ramsar Site – Beeshazari Tal in its buffer zone. The CNP has a history of over 3 decades in park management and a rich experience in resolving conflicts between the park and the people.  It is a rich natural area in the Terai, the subtropical southern part of Nepal. A total of 68 species of mammals, 544 species of birds, 56 species of herpetofauna and 126 species of fish have been recorded in the park. The park is especially renowned for its protection of One Horned Rhinoceros, Royal Bengal Tiger and Gharial Crocodile." />
 </LinearLayout>

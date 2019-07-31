@@ -10,7 +10,7 @@ public class nav_contactUs_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nav_contactus_activity);
+        setContentView(R.layout.activity_about_us);
         setTitle("About Us");
     }
 }

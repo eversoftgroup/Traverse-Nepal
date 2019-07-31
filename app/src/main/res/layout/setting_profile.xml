@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.eversoft.settings.setting_profile"
-    android:layout_marginLeft="20dp">
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="72dp"
+    android:layout_marginRight="20dp"
+    tools:context="com.eversoft.settings.setting_profile">
 
     <TableRow>
+
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="40dp"
@@ -22,12 +26,13 @@
     </TableRow>
 
     <TableRow>
+
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Full Name "
-            android:textStyle="bold"
             android:textSize="18sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="25dp"
             tools:layout_editor_absoluteY="112dp" />
 
@@ -36,14 +41,14 @@
             android:id="@+id/profile_full_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="FirstName MiddleName LastName "
+            android:text="Full Name "
             android:textSize="18sp"
             tools:layout_editor_absoluteX="175dp"
             tools:layout_editor_absoluteY="112dp" />
     </TableRow>
 
-    <TableRow
-        android:layout_marginTop="10dp">
+    <TableRow android:layout_marginTop="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,8 +67,9 @@
             tools:layout_editor_absoluteX="180dp"
             tools:layout_editor_absoluteY="165dp" />
     </TableRow>
-    <TableRow
-        android:layout_marginTop="10dp">
+
+    <TableRow android:layout_marginTop="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,8 +89,8 @@
             tools:layout_editor_absoluteY="215dp" />
     </TableRow>
 
-    <TableRow
-        android:layout_marginTop="10dp">
+    <TableRow android:layout_marginTop="10dp">
+
         <TextView
             android:id="@+id/divider2"
             android:layout_width="fill_parent"
@@ -94,10 +100,10 @@
             tools:layout_editor_absoluteY="269dp" />
     </TableRow>
 
-    <TableRow
-        android:layout_marginTop="10dp">
+    <TableRow android:layout_marginTop="10dp">
+
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/activity_place_detail_body"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Visa Information: "
@@ -108,8 +114,8 @@
     </TableRow>
 
 
-    <TableRow
-        android:layout_marginTop="10dp">
+    <TableRow android:layout_marginTop="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,8 +135,8 @@
             tools:layout_editor_absoluteY="353dp" />
     </TableRow>
 
-    <TableRow
-        android:layout_marginTop="10dp">
+    <TableRow android:layout_marginTop="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -151,8 +157,8 @@
     </TableRow>
 
 
-    <TableRow
-        android:layout_marginTop="10dp">
+    <TableRow android:layout_marginTop="10dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

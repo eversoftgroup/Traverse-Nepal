@@ -1,14 +1,46 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.eversoft.fragments.help_sim">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Sim fragment"
-        android:id="@+id/help_sim_text"/>
+        android:id="@+id/frag_help_sim_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Sim Card Info"
+        android:textSize="30sp"
+        android:typeface="sans"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/frag_help_sim_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="@+id/frag_help_sim_title"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="@+id/frag_help_sim_title"
+        app:layout_constraintTop_toBottomOf="@+id/frag_help_sim_title"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="276dp"
+        android:layout_height="191dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="8dp"
+        android:text="This is trying to be good. Hello world this is hellpw wrold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/frag_help_sim_img"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/frag_help_sim_img"
+        app:layout_constraintTop_toBottomOf="@+id/frag_help_sim_img"
+        app:layout_constraintVertical_bias="0.013" />
+</android.support.constraint.ConstraintLayout>

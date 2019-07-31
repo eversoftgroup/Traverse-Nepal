@@ -12,12 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Start_help">
+        <activity android:name=".SplashScreen" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".Start_help">
+
         </activity>
         <activity android:name="com.eversoft.services.nav_About_us" />
         <activity android:name="com.eversoft.adapters.Place_detail" />
@@ -28,7 +32,7 @@
         <activity
             android:name="com.eversoft.settings.nav_login_activity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light"/>
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name="com.eversoft.generalfeatures.nav_feedback_activity"
             android:parentActivityName=".MainActivity" />
@@ -37,8 +41,9 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name="com.eversoft.generalfeatures.nav_help_activity" />
         <activity android:name="com.eversoft.settings.nav_setting_activity" />
-        <activity android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
-                    android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name="com.eversoft.services.nav_currencyconverter" />
         <activity android:name="com.eversoft.services.nav_weatherforecast_activity" />
         <activity android:name="com.eversoft.services.nav_clockconverter_activity" />
@@ -46,9 +51,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

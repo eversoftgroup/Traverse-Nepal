@@ -18,9 +18,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <include  android:layout_margin="6dp"
-        layout="@layout/content_main_signlecardview" android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+    <include
+        layout="@layout/content_main_signlecardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:visibility="gone" />
 
 
 
