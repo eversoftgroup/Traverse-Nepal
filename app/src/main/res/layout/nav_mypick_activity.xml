@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".nav_mypick_activity">
 
-
     <android.support.v7.widget.CardView
         android:id="@+id/nav_mypick_cardview"
         android:layout_width="0dp"
@@ -19,6 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
+
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -36,7 +36,8 @@
                 android:textSize="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/imageView2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -50,7 +51,7 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/desck"
                 android:layout_width="201dp"
                 android:layout_height="107dp"
                 android:layout_marginStart="8dp"
@@ -59,13 +60,14 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-                android:text="Bhote koshi is the best place to rafting. This is the best things that could happen. This is a place to best good and enjoy time"
+                android:text="Itinerary lists"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView2"
                 app:layout_constraintEnd_toStartOf="@+id/imageView2"
                 app:layout_constraintHorizontal_bias="0.16"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="1.0"
+                android:scrollbars="vertical"/>
 
             <ImageButton
                 android:id="@+id/nav_my_pick_more_vert"
@@ -88,4 +90,31 @@
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_mypick_cardview" />
+
+    <TextView
+        android:id="@+id/myPick_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Itinerary lists here..."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycler"
+        android:scrollbars="vertical"/>
+
 </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.eversoft.api;
 
-import com.eversoft.entities.Message;
 import com.eversoft.entities.User;
 import com.eversoft.entities.UserLogin;
 
@@ -14,7 +13,7 @@ public interface ApiUserService {
 
     @Headers({"Accept:application/json", "Content-Type:application/json;"})
     @POST("auth/login")
-    Call<Message> userLogin(
+    Call<UserLogin> userLogin(
             @Query("username") String username,
             @Query("password") String password);
 

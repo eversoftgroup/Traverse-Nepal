@@ -38,7 +38,7 @@ public class User {
     private String avatarUrl;
     @SerializedName("visaInformation")
     @Expose
-    private Object visaInformation;
+    private VisaInformation visaInformation;
     @SerializedName("loginInformation")
     @Expose
     private UserLogin loginInformation;
@@ -115,11 +115,11 @@ public class User {
         this.avatarUrl = avatarUrl;
     }
 
-    public Object getVisaInformation() {
+    public VisaInformation getVisaInformation() {
         return visaInformation;
     }
 
-    public void setVisaInformation(Object visaInformation) {
+    public void setVisaInformation(VisaInformation visaInformation) {
         this.visaInformation = visaInformation;
     }
 

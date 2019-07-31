@@ -42,7 +42,7 @@ public class Session {
         prefs.edit().putInt("userId", id).commit();
     }
 
-    public Integer getUserId() {
+    public int getUserId() {
         int id = prefs.getInt("userId",-1);
         return id;
     }

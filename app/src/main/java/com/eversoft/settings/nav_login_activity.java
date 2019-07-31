@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.eversoft.api.ApiUserService;
 import com.eversoft.api.RetrofitClientInstance;
 import com.eversoft.entities.Message;
+import com.eversoft.entities.User;
 import com.eversoft.entities.UserLogin;
 import com.eversoft.traversenepal.MainActivity;
 import com.eversoft.traversenepal.R;
@@ -85,30 +86,27 @@ public class nav_login_activity extends AppCompatActivity {
         Log.d("AuthServiceCalled with:", username + " " + password);
 
         RetrofitClientInstance.getRetrofitInstance(ipaddress).create(ApiUserService.class).userLogin(username,password)
-                .enqueue(new Callback<Message>() {
+                .enqueue(new Callback<UserLogin>() {
                     @Override
-                    public void onResponse(Call<Message> call, Response<Message> response) {
+                    public void onResponse(Call<UserLogin> call, Response<UserLogin> response) {
                         if(response.body() != null){
-                            Message userLogin = response.body();
-                            if(userLogin.getMessage().equals("-1")){
-                                Toast.makeText(nav_login_activity.this, "Username or password is wrong!", Toast.LENGTH_SHORT).show();
-                            }else{
-                                session = new Session(nav_login_activity.this);
-                                session.setUsername(username);
-                                session.setPassword(password);
-                                session.setApiKey(userLogin.getMessage());
+                            UserLogin userLogin = response.body();
+                            userLogin.getEmail();
+                            session = new Session(nav_login_activity.this);
+                            session.setUsername(userLogin.getUsername());
+                            session.setUserId(userLogin.getId());
+                            session.setApiKey(userLogin.getApiKey());
 
-                                Toast.makeText(nav_login_activity.this, "You are logged In", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(nav_login_activity.this, MainActivity.class);
-                                startActivity(intent);
-                            }
+                            Toast.makeText(nav_login_activity.this, "You are logged In", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(nav_login_activity.this, MainActivity.class);
+                            startActivity(intent);
                         }else{
-                            Toast.makeText(nav_login_activity.this, "Network connection failed!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(nav_login_activity.this, "Username or password is wrong!", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<Message> call, Throwable t) {
+                    public void onFailure(Call<UserLogin> call, Throwable t) {
                         Toast.makeText(nav_login_activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });

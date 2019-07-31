@@ -86,6 +86,27 @@
     <TableRow
         android:layout_marginTop="10dp">
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Role: "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="215dp" />
+
+        <TextView
+            android:id="@+id/profile_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="role.no"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="175dp"
+            tools:layout_editor_absoluteY="215dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="10dp">
+        <TextView
             android:id="@+id/divider2"
             android:layout_width="fill_parent"
             android:layout_height="1dp"
