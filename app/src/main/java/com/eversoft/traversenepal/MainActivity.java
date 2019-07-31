@@ -30,11 +30,13 @@ import com.eversoft.adapters.Place_detail;
 import com.eversoft.generalfeatures.nav_contactUs_activity;
 import com.eversoft.generalfeatures.nav_help_activity;
 import com.eversoft.services.nav_currencyconverter;
-import com.eversoft.services.nav_login_activity;
+import com.eversoft.settings.nav_login_activity;
 import com.eversoft.generalfeatures.nav_feedback_activity;
 import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
 
 import static android.widget.ListPopupWindow.WRAP_CONTENT;
+import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
+import com.eversoft.generalfeatures.*;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, currencyconverter.OnFragmentInteractionListener, weather.OnFragmentInteractionListener {
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        //getMenuInflater().inflate(R.menu.bottom_appbar_menu, menu);
         return true;
     }
 

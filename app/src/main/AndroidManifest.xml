@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.eversoft.traversenepal">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,10 +22,10 @@
         <activity android:name="com.eversoft.adapters.Place_detail" />
         <activity android:name=".nav_mypick_detail_activity" />
         <activity
-            android:name="com.eversoft.services.nav_signup_activity"
-            android:parentActivityName="com.eversoft.services.nav_login_activity" />
+            android:name="com.eversoft.settings.nav_signup_activity"
+            android:parentActivityName="com.eversoft.settings.nav_login_activity" />
         <activity
-            android:name="com.eversoft.services.nav_login_activity"
+            android:name="com.eversoft.settings.nav_login_activity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light"/>
         <activity
@@ -34,7 +36,8 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name="com.eversoft.generalfeatures.nav_help_activity" />
         <activity android:name="com.eversoft.settings.nav_setting_activity" />
-        <activity android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity" />
+        <activity android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
+                    android:parentActivityName=".MainActivity"/>
         <activity android:name="com.eversoft.services.nav_currencyconverter" />
         <activity android:name="com.eversoft.services.nav_weatherforecast_activity" />
         <activity android:name="com.eversoft.services.nav_clockconverter_activity" />

@@ -37,9 +37,9 @@ public class FragmentAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position){
             case 0:
-                return mContext.getString(R.string.tab1);
+                return mContext.getString(R.string.visitNepal2020_tab1);
             case 1:
-                return mContext.getString(R.string.tab2);
+                return mContext.getString(R.string.visitNepal2020_tab2);
                 default:
                     return null;
         }

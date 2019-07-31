@@ -32,7 +32,7 @@ public class nav_help_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nav_help_activity);
+        setContentView(R.layout.nav_help_activity);
         RecyclerView recyclerView = findViewById(R.id.nav_help_recycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new help_activity_list_adapter(listArr));

@@ -11,5 +11,6 @@ public class nav_contactUs_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_contactus_activity);
+        setTitle("About Us");
     }
 }
