@@ -19,6 +19,10 @@ public class nav_mypick_activity extends AppCompatActivity {
 
         final ImageButton BtnMoreOption = findViewById(R.id.nav_my_pick_more_vert);
 
+
+
+        setTitle("My Pick");
+
         BtnMoreOption.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,8 +32,5 @@ public class nav_mypick_activity extends AppCompatActivity {
                 popupMenu.show();
             }
         });
-
-
-
     }
 }

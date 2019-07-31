@@ -1,14 +1,23 @@
 package com.eversoft.traversenepal;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.CardView;
+import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -25,22 +34,49 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.eversoft.adapters.Place_detail;
 import com.eversoft.generalfeatures.nav_contactUs_activity;
 import com.eversoft.generalfeatures.nav_help_activity;
 import com.eversoft.services.nav_currencyconverter;
-import com.eversoft.settings.nav_login_activity;
-import com.eversoft.generalfeatures.nav_feedback_activity;
-import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
+import com.eversoft.generalfeatures.nav_help_activity;
 
 import static android.widget.ListPopupWindow.WRAP_CONTENT;
+
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.widget.EditText;
+import android.widget.HeaderViewListAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import android.annotation.SuppressLint;
+
+import com.eversoft.adapters.RecycleViewAdapter;
+import com.eversoft.adapters.mainActivity_toolbar_Adapter;
+import com.eversoft.fragments.currencyconverter;
+import com.eversoft.fragments.weather;
+import com.eversoft.generalfeatures.nav_contactUs_activity;
+import com.eversoft.models.home_model;
+import com.eversoft.services.nav_About_us;
+import com.eversoft.services.nav_currencyconverter;
+import com.eversoft.settings.nav_login_activity;
+import com.eversoft.generalfeatures.nav_feedback_activity;
+import com.eversoft.settings.setting_profile;
+import com.eversoft.utils.Session;
 import com.eversoft.visitnepal2020.nav_visitnepal2020_activity;
+import com.eversoft.settings.nav_setting_activity;
 import com.eversoft.generalfeatures.*;
+
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, currencyconverter.OnFragmentInteractionListener, weather.OnFragmentInteractionListener {
-
+    private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,6 +122,19 @@ public class MainActivity extends AppCompatActivity
                 expandableCardview.setLayoutParams(new CardView.LayoutParams(CardView.LayoutParams.WRAP_CONTENT, 300));
             }
         });*/
+
+        //horizontalScroll();
+        session  = new Session(this);
+        if(!session.getUsername().equals("") && !session.getPassword().equals("")){
+            navigationView.getMenu().findItem(R.id.nav_login_signup).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_mypick).setVisible(true);
+            navigationView.getMenu().findItem(R.id.nav_profile).setVisible(true);
+            navigationView.getMenu().findItem(R.id.nav_logout).setVisible(true);
+
+            View headerView = navigationView.getHeaderView(0);
+            TextView nav_username = headerView.findViewById(R.id.nav_header_username);
+            nav_username.setText("Welcome, "+ session.getUsername());
+        }
     }
 
     @Override
@@ -110,12 +159,12 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(MainActivity.this, nav_setting_activity.class);
+            MainActivity.this.startActivity(intent);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -128,7 +177,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_mypick) {
             Intent myIntent = new Intent(MainActivity.this, nav_mypick_activity.class);
             MainActivity.this.startActivity(myIntent);
-        }   else if (id == R.id.nav_login_signup) {
+        }  else if (id == R.id.nav_profile) {
+            Intent myIntent = new Intent(MainActivity.this, setting_profile.class);
+            MainActivity.this.startActivity(myIntent);
+        }else if (id == R.id.nav_login_signup) {
             Intent intent = new Intent(MainActivity.this, nav_login_activity.class);
             MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_aboutus) {
@@ -137,12 +189,20 @@ public class MainActivity extends AppCompatActivity
         } else if(id == R.id.nav_feedback) {
             Intent intent = new Intent(MainActivity.this, nav_feedback_activity.class);
             MainActivity.this.startActivity(intent);
+        } else if(id == R.id.nav_setting) {
+            Intent intent = new Intent(MainActivity.this, nav_setting_activity.class);
+            MainActivity.this.startActivity(intent);
+        }else if(id == R.id.nav_currencyconverter) {
+            Intent intent = new Intent(MainActivity.this, nav_currencyconverter.class);
+            MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_share) {
             Intent shareIntent = new Intent();
             shareIntent.setAction(Intent.ACTION_SEND);
             shareIntent.putExtra(Intent.EXTRA_TEXT, "https://facebook.com/eversoftgroup");
             shareIntent.setType("text/plain");
             startActivity(Intent.createChooser(shareIntent, "share via "));
+        } else if(id == R.id.nav_logout) {
+            logout();
         }
         else if (id == R.id.nav_help) {
             Intent intent = new Intent(MainActivity.this, nav_help_activity.class);
@@ -155,6 +215,9 @@ public class MainActivity extends AppCompatActivity
             MainActivity.this.startActivity(intent);
         }
 
+
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
             return true;
         }
 
@@ -162,4 +225,11 @@ public class MainActivity extends AppCompatActivity
     public void onFragmentInteraction(Uri uri) {
 
     }
+        public void logout(){
+            session.setUsername("");
+            session.setPassword("");
+            Toast.makeText(MainActivity.this, "You are logged out", Toast.LENGTH_SHORT).show();
+            finish();
+            startActivity(getIntent());
+        }
 }

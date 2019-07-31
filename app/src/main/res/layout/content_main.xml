@@ -13,6 +13,10 @@
 
     <include android:layout_margin="6dp" layout="@layout/content_main_signlecardview" android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/home_recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <include  android:layout_margin="6dp"
         layout="@layout/content_main_signlecardview" android:layout_height="wrap_content"

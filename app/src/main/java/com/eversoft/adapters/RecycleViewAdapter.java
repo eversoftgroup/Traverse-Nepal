@@ -51,6 +51,4 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
             itemTitle = itemView.findViewById(R.id.item_title);
         }
     }
-
-
 }

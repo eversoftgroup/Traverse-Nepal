@@ -2,6 +2,7 @@ package com.eversoft.traversenepal;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -13,6 +14,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.view.View;
+import android.widget.Button;
 
 import com.eversoft.fragments.help_bank;
 import com.eversoft.fragments.help_info;
