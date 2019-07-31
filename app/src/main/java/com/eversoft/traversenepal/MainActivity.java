@@ -114,18 +114,8 @@ public class MainActivity extends AppCompatActivity
 
         toolbarViewPager.setAdapter(pagerAdapter);
 
-        //cardview expandable
-        /*@SuppressLint("WrongViewCast") final CardView expandableCardview = findViewById(R.id.expandablecard);
-        expandableCardview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                expandableCardview.setLayoutParams(new CardView.LayoutParams(CardView.LayoutParams.WRAP_CONTENT, 300));
-            }
-        });*/
-
-        //horizontalScroll();
         session  = new Session(this);
-        if(!session.getUsername().equals("") && !session.getPassword().equals("")){
+        if(!session.getUsername().equals("")){
             navigationView.getMenu().findItem(R.id.nav_login_signup).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_mypick).setVisible(true);
             navigationView.getMenu().findItem(R.id.nav_profile).setVisible(true);
@@ -227,7 +217,8 @@ public class MainActivity extends AppCompatActivity
     }
         public void logout(){
             session.setUsername("");
-            session.setPassword("");
+            session.setApiKey("");
+            session.setUserId(-1);
             Toast.makeText(MainActivity.this, "You are logged out", Toast.LENGTH_SHORT).show();
             finish();
             startActivity(getIntent());

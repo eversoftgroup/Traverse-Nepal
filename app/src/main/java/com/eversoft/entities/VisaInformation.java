@@ -16,7 +16,7 @@ public class VisaInformation {
     private String documentNumber;
 
     @SerializedName("expiryDate")
-    private Date expiryDate;
+    private String expiryDate;
 
     @SerializedName("visaType")
     private String visaType;
@@ -27,7 +27,7 @@ public class VisaInformation {
     public VisaInformation() {
     }
 
-    public VisaInformation(int id, String documentType, String documentNumber, Date expiryDate, String visaType, int visaPeriod) {
+    public VisaInformation(int id, String documentType, String documentNumber, String expiryDate, String visaType, int visaPeriod) {
         this.id = id;
         this.documentType = documentType;
         this.documentNumber = documentNumber;
@@ -60,11 +60,11 @@ public class VisaInformation {
         this.documentNumber = documentNumber;
     }
 
-    public Date getExpiryDate() {
+    public String getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(Date expiryDate) {
+    public void setExpiryDate(String expiryDate) {
         this.expiryDate = expiryDate;
     }
 
