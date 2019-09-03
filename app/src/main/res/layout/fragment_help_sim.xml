@@ -27,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="@+id/frag_help_sim_title"
         app:layout_constraintTop_toBottomOf="@+id/frag_help_sim_title"
-        tools:src="@mipmap/ic_launcher"/>
+        android:background="@mipmap/ic_launcher"/>
 
     <TextView
         android:id="@+id/textView13"

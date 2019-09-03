@@ -107,7 +107,7 @@ public class nav_login_activity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<UserLogin> call, Throwable t) {
-                        Toast.makeText(nav_login_activity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(nav_login_activity.this, "Username or password is wrong!", Toast.LENGTH_LONG).show();
                     }
                 });
         return true;

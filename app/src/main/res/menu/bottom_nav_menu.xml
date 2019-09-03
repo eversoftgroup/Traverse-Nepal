@@ -4,17 +4,18 @@
     <item
 
         android:orderInCategory="100"
-        android:title="nav1"
+        android:title="Home"
         app:showAsAction="never" />
 
     <item
 
         android:orderInCategory="100"
-        android:title="nav2"
+        android:title="Places"
         app:showAsAction="never" />
     <item
 
         android:orderInCategory="100"
-        android:title="nav3"
-        app:showAsAction="never" />
+        android:title="Forum"
+        app:showAsAction="never"
+        />
 </menu>
