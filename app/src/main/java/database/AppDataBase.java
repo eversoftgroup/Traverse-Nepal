@@ -14,7 +14,7 @@ import objects.ChecklistItem;
 import objects.City;
 
 /**
- * Created by Santosh on 05/09/18.
+ * Created by Pradeep on 05/09/18.
  */
 
 @Database(entities = {City.class, ChecklistItem.class}, version = 3, exportSchema = false)

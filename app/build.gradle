@@ -105,6 +105,7 @@ dependencies {
 
     // World Country flag
     implementation 'com.github.blongho:world-country-data:v1.1.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 assemble.dependsOn('lint')

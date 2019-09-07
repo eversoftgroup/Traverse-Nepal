@@ -31,7 +31,7 @@ public class WorldClockActivity extends AppCompatActivity {
     TextView timezone_name;
     Boolean flag_check_first_item = false;
     private Context mContext;
-    String timezone_short = "Asia/Kolkata";
+    String timezone_short = "Asia/Kathmandu";
     private AnalogClock mAnalogClock;
     private String mFormat;
     private final String mHours12 = "hh:mm:ss a";

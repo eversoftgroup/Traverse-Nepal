@@ -67,7 +67,7 @@ public class TravelFragment extends Fragment implements CardViewOptionsAdapter.O
     public void onItemClick(int position) {
         Intent i;
         switch (position) {
-            case 0:
+            case 2:
                 i = HotelsActivity.getStartIntent(mActivity);
                 startActivity(i);
                 break;
@@ -75,7 +75,7 @@ public class TravelFragment extends Fragment implements CardViewOptionsAdapter.O
                 i = ShoppingCurrentCityActivity.getStartIntent(mActivity);
                 startActivity(i);
                 break;
-            case 2:
+            case 0:
                 i = MapViewRealTimeActivity.getStartIntent(mActivity);
                 startActivity(i);
                 break;
@@ -84,14 +84,14 @@ public class TravelFragment extends Fragment implements CardViewOptionsAdapter.O
 
     private List<CardItemEntity> getTravelItems() {
         List<CardItemEntity> cardEntities = new ArrayList<>();
-        cardEntities.add(
-                new CardItemEntity(
+      /*  cardEntities.add(*/
+         /*       new CardItemEntity(
                         getResources().getDrawable(R.drawable.hotel),
                         getResources().getString(R.string.hotel)));
         cardEntities.add(
                 new CardItemEntity(
                         getResources().getDrawable(R.drawable.shop),
-                        getResources().getString(R.string.online_Shopping)));
+                        getResources().getString(R.string.online_Shopping)));*/
         cardEntities.add(
                 new CardItemEntity(
                         getResources().getDrawable(R.drawable.location),

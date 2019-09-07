@@ -173,7 +173,7 @@
     <string name="to_text">To</string>
     <string name="usd_dollar">United States Dollar</string>
     <string name="usd_amount">1</string>
-    <string name="inr">Indian Rupee</string>
+    <string name="inr">Nepalese Rupee</string>
 
     <!-- Sample Data -->
     <string name="sample_state">Delhi</string>
@@ -262,7 +262,7 @@
     <string name="search_currencies">Search currencies..</string>
     <string name="output_0">0.0</string>
     <string name="convert">Convert</string>
-    <string name="sample_timezone">Asia/Kolkata</string>
+    <string name="sample_timezone">Asia/Kathmandu</string>
 
     <!-- Upcoming weekends Strings -->
     <string name="upcoming_long_weekends">Upcoming long weekends</string>

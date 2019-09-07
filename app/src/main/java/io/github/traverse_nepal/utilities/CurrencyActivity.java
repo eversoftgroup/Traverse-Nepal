@@ -92,7 +92,7 @@ public class CurrencyActivity extends AppCompatActivity {
 
     int from_amount = 1;
     String first_country_short = "USD";
-    String second_country_short = "INR";
+    String second_country_short = "NPR";
     String GRAPH_LABEL_NAME = "Last 7 days currency rate trends";
 
     private ProgressDialog mDialog;
