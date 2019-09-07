@@ -1,78 +1,207 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!-- suppress ALL -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.eversoft.traversenepal">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="io.github.traverse_nepal">
 
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:icon="@drawable/google_travel_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:largeHeap="true"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
-        <activity android:name="com.eversoft.forum.forum_home"
-             android:parentActivityName=".MainActivity"></activity>
+        tools:replace="android:fullBackupContent">
         <activity
-            android:name=".SplashScreen"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            android:name="io.github.traverse_nepal.mytrips.TripImageActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="io.github.traverse_nepal.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeNoBar"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:host="project-travel-mate.github.io" />
+                <data android:scheme="https" />
+                <data android:scheme="http" />
+                <data android:pathPattern=".*" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="utils.GPSTracker"
+            android:enabled="true" />
+
+        <activity
+            android:name="io.github.traverse_nepal.utilities.ChecklistActivity"
+            android:label="@string/title_activity_select_city"
+            android:theme="@style/AppTheme_picker" />
+        <activity
+            android:name="io.github.traverse_nepal.Start_help"
+            android:label="Help screen"
+            android:theme="@style/AppTheme_picker" />
+        <activity
+            android:name="io.github.traverse_nepal.travel.ShoppingCurrentCityActivity"
+            android:label="@string/title_activity_shopping_currentcity"
+            android:theme="@style/AppTheme_picker" />
+        <activity
+            android:name="io.github.traverse_nepal.travel.HotelsActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_hotels"
+            android:theme="@style/AppTheme_picker" />
+        <activity
+            android:name="io.github.traverse_nepal.travel.MapViewRealTimeActivity"
+            android:label="@string/title_activity_map"
+            android:theme="@style/AppTheme_picker" />
+        <activity
+            android:name="io.github.traverse_nepal.SplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppThemeNoBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
         </activity>
-        <activity android:name=".Start_help"></activity>
         <activity
-            android:name="com.eversoft.services.nav_About_us"
-            android:parentActivityName=".MainActivity" />
+            android:name="io.github.traverse_nepal.destinations.funfacts.FunFactsActivity"
+            android:label="@string/title_activity_fun_facts"
+            android:theme="@style/AppTheme_picker" />
+        <activity android:name="io.github.traverse_nepal.utilities.ShareContactActivity" />
         <activity
-            android:name="com.eversoft.adapters.Place_detail"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".nav_mypick_detail_activity" />
+            android:name="io.github.traverse_nepal.login.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppThemeNoBar"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name="com.eversoft.settings.nav_signup_activity"
-            android:parentActivityName="com.eversoft.settings.nav_login_activity" />
+            android:name="io.github.traverse_nepal.destinations.description.FinalCityInfoActivity"
+            android:theme="@style/AppThemeNoBar" />
+        <activity android:name="io.github.traverse_nepal.destinations.description.PlacesOnMapActivity" />
+        <activity android:name="io.github.traverse_nepal.mytrips.AddNewTripActivity" />
         <activity
-            android:name="com.eversoft.settings.nav_login_activity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light" />
+            android:name="io.github.traverse_nepal.mytrips.MyTripInfoActivity"
+            android:theme="@style/AppThemeNoBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name="io.github.traverse_nepal.destinations.description.TweetsActivity" />
         <activity
-            android:name="com.eversoft.generalfeatures.nav_feedback_activity"
-            android:parentActivityName=".MainActivity" />
+            android:name="io.github.traverse_nepal.VerifyEmailActivity"
+            android:label="@string/verify_email"
+            android:theme="@style/AppThemeNoBar" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="io.github.traverse_nepal.shareFile"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity android:name="io.github.traverse_nepal.ProfileActivity"
+                  android:configChanges="orientation|screenSize" />
+        <activity android:name="io.github.traverse_nepal.friend.FriendsProfileActivity" />
+        <activity android:name="io.github.traverse_nepal.notifications.NotificationsActivity" />
         <activity
-            android:name="com.eversoft.generalfeatures.nav_contactUs_activity"
-            android:parentActivityName=".MainActivity" />
+            android:name="io.github.traverse_nepal.FullScreenImage"
+            android:theme="@style/FullProfileImageTheme" />
+        <activity android:name="io.github.traverse_nepal.utilities.WeatherForecastActivity" />
+        <activity android:name="io.github.traverse_nepal.utilities.CompassActivity" />
+        <activity android:name="io.github.traverse_nepal.utilities.CurrencyActivity" />
+        <activity android:name="io.github.traverse_nepal.utilities.WorldClockActivity" />
+        <activity android:name="io.github.traverse_nepal.utilities.CurrencyListViewActivity" />
+        <activity android:name="io.github.traverse_nepal.utilities.TimezoneListViewActivity" />
+        <activity android:name="io.github.traverse_nepal.destinations.description.WeatherActivity" />
+        <activity android:name="io.github.traverse_nepal.utilities.UpcomingWeekendsActivity" />
+        <activity android:name="io.github.traverse_nepal.destinations.description.CityHistoryActivity" />
+        <activity android:name="io.github.traverse_nepal.destinations.description.CityMapActivity" />
+        <activity android:name="io.github.traverse_nepal.travel.ListViewRealTimeActivity" />
+        <activity android:name="io.github.traverse_nepal.destinations.description.RestaurantsActivity" />
+        <activity android:name="io.github.traverse_nepal.destinations.description.TweetsDescriptionActivity" />
+        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity" />
+        <activity android:name="io.github.traverse_nepal.utilities.QuotesActivity" />
         <activity
-            android:name="com.eversoft.generalfeatures.nav_help_activity"
-            android:parentActivityName=".MainActivity" />
+            android:name="io.github.traverse_nepal.DeleteProfilePictureActivity"
+            android:icon="@drawable/ic_delete_round"
+            android:label="@string/remove_photo"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.DELETE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name="com.eversoft.settings.nav_setting_activity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name="com.eversoft.services.nav_currencyconverter"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name="com.eversoft.services.nav_weatherforecast_activity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name="com.eversoft.services.nav_clockconverter_activity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".nav_mypick_activity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name="com.eversoft.settings.setting_profile"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name="io.github.traverse_nepal.destinations.description.RestaurantDetailsActivity"
+            android:theme="@style/AppThemeNoBar" />
+
+        <receiver android:name="widget.CheckListWidgetProvider">
+            <intent-filter>
+
+                <!-- This widget provider receives broadcast with following action name or simply onUpdate of AppWidgetProvider is called -->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <!-- linking up xml file of appwidget-provider to AppWidgetProvider -->
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/checklist_widget_info" />
+        </receiver>
+
+        <service
+            android:name="widget.CheckListWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name="widget.ClockWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_info" />
+        </receiver>
+
+        <activity android:name="widget.ClockWidgetConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

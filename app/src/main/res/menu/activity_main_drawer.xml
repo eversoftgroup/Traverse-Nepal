@@ -1,89 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group android:checkableBehavior="single" android:id="@+id/nav_grp1">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/nav_home"
-            android:title="@string/nav_home" />
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_city"
+            android:icon="@drawable/ic_location_city_black"
+            android:title="@string/navigation_drawer_destination" />
+        <item
+            android:id="@+id/nav_travel"
+            android:icon="@drawable/ic_directions_car_black"
+            android:title="@string/navigation_drawer_travel" />
+        <item
+            android:id="@+id/nav_mytrips"
+            android:icon="@drawable/ic_card_travel_black_24dp"
+            android:title="@string/my_trip" />
+        <item
+            android:id="@+id/nav_myfriends"
+            android:icon="@drawable/ic_people_black_24dp"
+            android:title="@string/navigation_drawer_my_friends" />
+        <item
+            android:id="@+id/nav_favourite"
+            android:icon="@drawable/ic_favorite_black_24dp"
+            android:title="@string/favourite_cities" />
+        <item
+            android:id="@+id/nav_utility"
+            android:icon="@drawable/ic_utilities"
+            android:title="@string/navigation_drawer_utilities" />
 
-        <item
-            android:id="@+id/nav_mypick"
-            android:icon="@drawable/nav_mypick"
-            android:title="@string/nav_mypick"
-            android:visible="false"/>
-
-        <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/nav_profile"
-            android:title="@string/nav_profile"
-            android:visible="false"/>
-
-    <group
-        android:id="@+id/menu_top2"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_clockconverter"
-            android:icon="@drawable/nav_clockconverter"
-            android:title="@string/nav_clockconverter" />
-        <item
-            android:id="@+id/nav_weatherforecast"
-            android:icon="@drawable/nav_weatherforecast"
-            android:title="@string/nav_weatherforecast" />
-        <item
-            android:id="@+id/nav_currencyconverter"
-            android:icon="@drawable/nav_currencyconverter"
-            android:title="@string/nav_currencyconverter" />
     </group>
 
-    <group
-        android:id="@+id/menu_top3"
-        android:checkableBehavior="single">
+    <group android:checkableBehavior="single" android:id="@+id/nav_grp2">
+
         <item
-            android:id="@+id/nav_visitnepal2020"
-            android:icon="@drawable/nav_visitnepal2020"
-            android:title="@string/nav_visitnepal2020" />
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/ic_about_us"
+            android:title="@string/navigation_drawer_about_us" />
         <item
-            android:id="@+id/nav_forum"
-            android:icon="@drawable/nav_visitnepal2020"
-            android:title="@string/nav_forum_name" />
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/navigation_drawer_signout" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/navigation_drawer_settings"/>
     </group>
-    <group
-        android:id="@+id/menu_top4"
-        android:checkableBehavior="single">
 
-        <item
-            android:id="@+id/nav_setting"
-            android:icon="@drawable/nav_setting"
-            android:title="@string/nav_setting" />
-
-        <item
-            android:id="@+id/nav_login_signup"
-            android:icon="@drawable/nav_login_signup"
-            android:title="@string/nav_login_signup" />
-
-        <item
-            android:id="@+id/nav_logout"
-            android:icon="@drawable/nav_logout"
-            android:title="@string/action_logout"
-            android:visible="false"/>
-    </group>
-    <item
-        android:id="@+id/nav_help"
-        android:icon="@drawable/nav_help"
-        android:title="@string/nav_help" />
-
-    <item
-        android:id="@+id/nav_aboutus"
-        android:icon="@drawable/nav_aboutus"
-        android:title="@string/nav_aboutus" />
-    <item
-        android:id="@+id/nav_feedback"
-        android:icon="@drawable/nav_feedback"
-        android:title="@string/nav_feedback" />
-    <item
-        android:id="@+id/nav_share"
-        android:icon="@drawable/nav_share"
-        android:title="@string/nav_share" />
 </menu>

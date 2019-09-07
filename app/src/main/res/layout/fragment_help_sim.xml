@@ -2,8 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.eversoft.fragments.help_sim">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/frag_help_sim_title"
@@ -27,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="@+id/frag_help_sim_title"
         app:layout_constraintTop_toBottomOf="@+id/frag_help_sim_title"
-        android:background="@mipmap/ic_launcher"/>
+        android:background="@drawable/ag"/>
 
     <TextView
         android:id="@+id/textView13"

@@ -5,8 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.eversoft.fragments.help_info">
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/frag_hel_info_img"
@@ -17,7 +16,7 @@
             app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="@+id/frag_help_info_text"
             app:layout_constraintTop_toBottomOf="@+id/frag_help_info_text"
-            android:background="@mipmap/ic_launcher" />
+            android:background="@drawable/ae" />
 
         <TextView
             android:id="@+id/frag_help_info_text"
