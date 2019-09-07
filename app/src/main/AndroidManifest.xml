@@ -11,23 +11,26 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen" android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.eversoft.forum.forum_home"
+             android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Start_help">
-
-        </activity>
-        <activity android:name="com.eversoft.services.nav_About_us"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.adapters.Place_detail"
-            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Start_help"></activity>
+        <activity
+            android:name="com.eversoft.services.nav_About_us"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.adapters.Place_detail"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".nav_mypick_detail_activity" />
         <activity
             android:name="com.eversoft.settings.nav_signup_activity"
@@ -42,26 +45,34 @@
         <activity
             android:name="com.eversoft.generalfeatures.nav_contactUs_activity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name="com.eversoft.generalfeatures.nav_help_activity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.settings.nav_setting_activity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
-                    android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.services.nav_currencyconverter"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.services.nav_weatherforecast_activity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.services.nav_clockconverter_activity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".nav_mypick_activity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name="com.eversoft.settings.setting_profile"
+        <activity
+            android:name="com.eversoft.generalfeatures.nav_help_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.settings.nav_setting_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.visitnepal2020.nav_visitnepal2020_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.services.nav_currencyconverter"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.services.nav_weatherforecast_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.services.nav_clockconverter_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".nav_mypick_activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name="com.eversoft.settings.setting_profile"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

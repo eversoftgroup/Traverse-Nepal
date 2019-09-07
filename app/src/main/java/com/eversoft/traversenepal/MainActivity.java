@@ -26,6 +26,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 
 import com.eversoft.adapters.mainActivity_toolbar_Adapter;
+import com.eversoft.forum.forum_home;
 import com.eversoft.fragments.currencyconverter;
 import com.eversoft.fragments.weather;
 import com.eversoft.services.nav_About_us;
@@ -200,11 +201,13 @@ public class MainActivity extends AppCompatActivity
         }else if (id == R.id.nav_visitnepal2020) {
             Intent intent = new Intent(MainActivity.this, nav_visitnepal2020_activity.class);
             MainActivity.this.startActivity(intent);
+        }else if(id == R.id.nav_forum){
+            Intent intent = new Intent(MainActivity.this, forum_home.class);
+            MainActivity.this.startActivity(intent);
         }else if (id == R.id.nav_currencyconverter) {
             Intent intent = new Intent(MainActivity.this, nav_currencyconverter.class);
             MainActivity.this.startActivity(intent);
         }
-
 
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
