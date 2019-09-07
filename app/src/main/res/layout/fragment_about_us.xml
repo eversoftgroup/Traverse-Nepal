@@ -92,7 +92,8 @@
             android:id="@+id/view_contributors"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            android:visibility="gone">
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Medium"
@@ -131,7 +132,8 @@
             android:id="@+id/cv_privacy_policy"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            android:visibility="gone">
 
             <TextView
                 style="@style/TextAppearance.AppCompat.Medium"
@@ -179,7 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:drawablePadding="15dp"
-                android:drawableStart="@drawable/ic_slack"
+                android:drawableStart="@drawable/ic_browser"
                 android:drawableTint="@color/grey"
                 android:padding="8dp"
                 android:text="@string/join_slack" />
@@ -243,7 +245,8 @@
                 android:drawableStart="@drawable/ic_local_drink_black_24dp"
                 android:drawableTint="@color/grey"
                 android:padding="8dp"
-                android:text="@string/buy_me_a_coffee" />
+                android:text="@string/buy_me_a_coffee"
+                android:visibility="gone"/>
 
 
         </android.support.v7.widget.CardView>

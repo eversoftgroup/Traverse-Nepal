@@ -48,7 +48,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:contentDescription="@string/empty_description"
-                    android:src="@drawable/google_travel_logo1" />
+                    android:src="@drawable/google_travel_logo" />
 
                 <LinearLayout
                     android:id="@+id/loginlayout"

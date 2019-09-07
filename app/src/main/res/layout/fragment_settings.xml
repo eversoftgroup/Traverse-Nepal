@@ -77,7 +77,8 @@
                     android:layout_weight="3"
                     android:text="@string/show_quotes_message"
                     android:textColor="@color/black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:visibility="gone"/>
 
                 <Switch
                     android:id="@+id/switch_quotes"
@@ -86,7 +87,8 @@
                     android:layout_gravity="end"
                     android:layout_weight="1"
                     android:layout_marginBottom="2dp"
-                    android:checked="false" />
+                    android:checked="false"
+                    android:visibility="gone"/>
             </LinearLayout>
 
             <View
@@ -105,6 +107,37 @@
                 android:layout_marginRight="2dp"
                 android:layout_marginTop="10dp">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingTop="2dp"
+                    android:text="Change Ip Address"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:id="@+id/aaa"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:paddingTop="2dp"
+                    android:text="0.0.0.0"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:id="@+id/serverIPAddress"/>
+
+                <Button
+                    android:id="@+id/setIPAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:gravity="center"
+                    android:text="Change Server IP Address"
+                    android:textSize="14sp" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -114,6 +147,7 @@
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:id="@+id/change_password_heading"/>
+
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/text_input_old_password"
                 android:layout_width="match_parent"

@@ -20,9 +20,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.dd.processbutton.iml.ActionProcessButton;
@@ -36,6 +38,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.traverse_nepal.R;
 import io.github.traverse_nepal.login.LoginActivity;
+import io.github.traverse_nepal.utils.SharedPrefHelper;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MultipartBody;
@@ -78,12 +81,20 @@ public class SettingsFragment extends Fragment {
     TextInputLayout confirmPasswordInput;
 
 
+    @BindView(R.id.serverIPAddress)
+    TextView IPaddress;
+    @BindView(R.id.setIPAddress)
+    Button setIpAddress;
+
     private String mToken;
     private Handler mHandler;
     private Activity mActivity;
     private SharedPreferences mSharedPreferences;
     private View mView;
     private static final String LOG_TAG = ProfileActivity.class.getSimpleName();
+
+    SharedPreferences myPreferences;
+    SharedPreferences.Editor editor;
 
     public SettingsFragment() {
         //required public constructor
@@ -112,6 +123,7 @@ public class SettingsFragment extends Fragment {
         boolean showDailyQuote = mSharedPreferences.getBoolean(QUOTES_SHOW_DAILY, true);
         mToken = mSharedPreferences.getString(USER_TOKEN, null);
         mHandler = new Handler(Looper.getMainLooper());
+
 
         doneButton.setMode(ActionProcessButton.Mode.ENDLESS);
         doneButton.setOnClickListener(v -> {

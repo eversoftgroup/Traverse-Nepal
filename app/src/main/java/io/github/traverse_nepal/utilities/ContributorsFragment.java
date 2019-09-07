@@ -22,12 +22,16 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 import adapters.ContributorsAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.traverse_nepal.R;
+import io.github.traverse_nepal.api.ContributorsService;
+import io.github.traverse_nepal.api.RetrofitClientInstance;
+import io.github.traverse_nepal.entities.Contributors;
 import objects.Contributor;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -107,7 +111,7 @@ public class ContributorsFragment extends Fragment {
         return mContributorsView;
     }
 
-    private void setContributors(String repo) {
+    private void setContributors1(String repo) {
         String uri = API_LINK_V2 + "get-contributors/" + repo;
         Log.v("EXECUTING", uri);
 
@@ -151,6 +155,32 @@ public class ContributorsFragment extends Fragment {
         });
     }
 
+    private void setContributors(String repo) {
+        String ipaddress = "192.168.0.116";
+        Log.v("EXECUTING", ipaddress);
+
+        RetrofitClientInstance.getRetrofitInstance(ipaddress).create(ContributorsService.class).getallContributors()
+                .enqueue(new retrofit2.Callback<List<Contributors>>() {
+                    @Override
+                    public void onResponse(retrofit2.Call<List<Contributors>> call, retrofit2.Response<List<Contributors>> response) {
+                        List<Contributors> contributors = response.body();
+                        for(Contributors contributor: contributors) {
+
+                        }
+                        Type listType = new TypeToken<ArrayList<Contributor>>() {
+                        }.getType();
+                        ArrayList<Contributor> contributorsList = new Gson().fromJson(response.body().toString(),
+                                listType);
+                        updateDataAndUI("Travel-Mate", contributorsList);
+                    }
+
+                    @Override
+                    public void onFailure(retrofit2.Call<List<Contributors>> call, Throwable t) {
+                        Log.e("Request Failed", "Message : " + t.getMessage());
+                    }
+                });
+    }
+
     private void updateDataAndUI(String url, ArrayList<Contributor> contributorsList) {
         if (url.contains("server")) {
             mServerContributors = contributorsList;
@@ -167,7 +197,7 @@ public class ContributorsFragment extends Fragment {
 
     @OnClick(R.id.contributors_footer)
     void github_project_cardview_clicked() {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/project-travel-mate")));
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/eversoftgroup/Traverse-Nepal")));
     }
 
     @Override

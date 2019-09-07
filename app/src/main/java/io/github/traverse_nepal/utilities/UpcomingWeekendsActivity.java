@@ -176,6 +176,7 @@ public class UpcomingWeekendsActivity extends AppCompatActivity implements Swipe
     private void getUpcomingLongWeekends()
     {
         String ipaddress = "192.168.0.116";
+
         RetrofitClientInstance.getRetrofitInstance(ipaddress).create(HolidayService.class).getallholidays()
                 .enqueue(new retrofit2.Callback<List<Holidays>>() {
                     @Override

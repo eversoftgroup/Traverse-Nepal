@@ -221,7 +221,7 @@
     <string name="report_a_bug">Report a Bug</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="contact_us">Contact Us</string>
-    <string name="join_slack">Join Slack</string>
+    <string name="join_slack">Join Us on Facebook</string>
     <string name="share_app">Share app</string>
     <string name="website">Website</string>
     <string name="buy_me_a_coffee">Buy us a coffee</string>
@@ -335,7 +335,7 @@
     <!-- About us strings -->
     <string name="email_hello">Hello</string>
     <string name="email_send">Send Email</string>
-    <string name="share_text">Hi! I found out this app for the travellers. Do download it : https://play.google.com/store/apps/details?id=io.github.project_travel_mate</string>
+    <string name="share_text">Hi! I found out this app for Travel to Nepal. Do clone it and contribute from : https://github.com/eversoftgroup/Traverse-Nepal</string>
 
     <!-- Restaurants strings -->
     <string name="sort">Sort</string>
@@ -355,13 +355,13 @@
     <string name="cuisines">Cuisines: %s</string>
     <string name="phone_no">Phone Number: %s</string>
 
-    <!-- Contributors string -->
+    <!-- ContributorsService string -->
     <string name="android_team">Android Team</string>
     <string name="server_team">Server Team</string>
     <string name="see_more">Show more contributors</string>
     <string name="i_want_to_contribute">I want to contribute</string>
     <string name="github">Github</string>
-    <string name="project">Project Travel-Mate</string>
+    <string name="project">Project Traverse Nepal</string>
     <string name="contributions">Commits: </string>
     <string name="check_internet">Please check your internet connectivity</string>
 

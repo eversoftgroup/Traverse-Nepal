@@ -26,13 +26,12 @@ import io.github.traverse_nepal.R;
  */
 public class AboutUsFragment extends Fragment {
 
-    private static final String EMAIL = "projecttravelmate.github.io@gmail.com";
-    private static final String WEBSITE = "http://project-travel-mate.github.io/Travel-Mate/";
-    private static final String PRIVACY_POLICY = "https://sites.google.com/view/privacy-policy-travel-mate/home";
-    private static final String GITHUB_REPO = "https://github.com/project-travel-mate/Travel-Mate/";
-    private static final String SLACK_LINK = "https://join.slack.com/t/project-travel-mate/shared_invite/enQtNDE2MjgyOTA5ODg5LT" +
-            "gwZGQ3NmY3Y2JjZTIxMWYwMTdkYzZiZmFjMjQ1ZDc1ZmM5NTNkYzQ3M2EwNjVmMzIyYTE4YzRiNjA4ZWRhZDc";
-    private static final String BUY_ME_A_COFFEE = "https://www.buymeacoffee.com/qITGMWB";
+    private static final String EMAIL = "eversoft.nepal@gmail.com";
+    private static final String WEBSITE = "http://eversoftgroup.com";
+    //private static final String PRIVACY_POLICY = "https://sites.google.com/view/privacy-policy";
+    private static final String GITHUB_REPO = "https://github.com/eversoftgroup/Traverse-Nepal";
+    private static final String FACEBOOK_GROUP = "https://facebook.com/eversoftgroup";
+    //private static final String BUY_ME_A_COFFEE = "https://www.buymeacoffee.com/qITGMWB";
 
     private Context mContext;
 
@@ -61,7 +60,8 @@ public class AboutUsFragment extends Fragment {
         ButterKnife.bind(this, view);
         try {
             PackageInfo pInfo = mContext.getPackageManager().getPackageInfo(mContext.getPackageName(), 0);
-            String version = pInfo.versionName;
+//            String version = pInfo.versionName;
+            String version = "1.0.0";
             mVersionCode.setText(version);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
@@ -76,12 +76,12 @@ public class AboutUsFragment extends Fragment {
         startActivity(viewIntent);
     }
 
-    @OnClick(R.id.cv_privacy_policy)
-    public void onPrivacyPolicyClicked() {
-        Intent viewIntent =
-                new Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_POLICY));
-        startActivity(viewIntent);
-    }
+//    @OnClick(R.id.cv_privacy_policy)
+//    public void onPrivacyPolicyClicked() {
+//        Intent viewIntent =
+//                new Intent(Intent.ACTION_VIEW, Uri.parse(PRIVACY_POLICY));
+//        startActivity(viewIntent);
+//    }
 
     @OnClick(R.id.cv_website)
     public void onWebsiteClicked() {
@@ -120,16 +120,16 @@ public class AboutUsFragment extends Fragment {
     @OnClick(R.id.cv_slack)
     public void onSlackClicked() {
         Intent viewIntent =
-                new Intent(Intent.ACTION_VIEW, Uri.parse(SLACK_LINK));
+                new Intent(Intent.ACTION_VIEW, Uri.parse(FACEBOOK_GROUP));
         startActivity(viewIntent);
     }
 
-    @OnClick(R.id.cv_bmc)
-    public void onBuyMeACoffeeClicked() {
-        Intent viewIntent =
-                new Intent(Intent.ACTION_VIEW, Uri.parse(BUY_ME_A_COFFEE));
-        startActivity(viewIntent);
-    }
+//    @OnClick(R.id.cv_bmc)
+//    public void onBuyMeACoffeeClicked() {
+//        Intent viewIntent =
+//                new Intent(Intent.ACTION_VIEW, Uri.parse(BUY_ME_A_COFFEE));
+//        startActivity(viewIntent);
+//    }
 
     @OnClick(R.id.view_contributors)
     public void onViewContributorsClicked() {
