@@ -24,16 +24,21 @@ import com.airbnb.lottie.LottieAnimationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.traverse_nepal.R;
+import io.github.traverse_nepal.api.HolidayService;
+import io.github.traverse_nepal.api.RetrofitClientInstance;
+import io.github.traverse_nepal.entities.Holidays;
 import objects.UpcomingWeekends;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -94,16 +99,16 @@ public class UpcomingWeekendsActivity extends AppCompatActivity implements Swipe
         return new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
     }
 
-    private void getUpcomingLongWeekends() {
-        String uri = API_LINK_V2 + "get-upcoming-holidays/" + Calendar.getInstance().get(Calendar.YEAR);
-
+    private void getUpcomingLongWeekends1() {
+       // String uri = API_LINK_V2 + "get-upcoming-holidays/" + Calendar.getInstance().get(Calendar.YEAR);
+        String uri = "192.168.0.116:8088/traverse/holidays/getall";
         Log.v("EXECUTING", uri);
 
         //Set up client
         OkHttpClient client = new OkHttpClient();
         //Execute request
         final Request request = new Request.Builder()
-                .header("Authorization", "Token " + mToken)
+                //.header("Authorization", "Token " + mToken)
                 .url(uri)
                 .build();
         //Setup callback
@@ -147,7 +152,7 @@ public class UpcomingWeekendsActivity extends AppCompatActivity implements Swipe
                                     // since it is upcoming weekends we need only these records
                                     // which are going to happen in future
                                     if (calendar.getTime().after(todayDate)) {
-                                        weekends.add(new UpcomingWeekends(month, date, day, name, type));
+                                       // weekends.add(new UpcomingWeekends(month, date, day, name, type));
                                     }
                                 }
                                 animationView.setVisibility(View.GONE);
@@ -166,6 +171,39 @@ public class UpcomingWeekendsActivity extends AppCompatActivity implements Swipe
                 });
             }
         });
+    }
+
+    private void getUpcomingLongWeekends()
+    {
+        String ipaddress = "192.168.0.116";
+        RetrofitClientInstance.getRetrofitInstance(ipaddress).create(HolidayService.class).getallholidays()
+                .enqueue(new retrofit2.Callback<List<Holidays>>() {
+                    @Override
+                    public void onResponse(retrofit2.Call<List<Holidays>> call, retrofit2.Response<List<Holidays>> response) {
+//                        JSONArray arr;
+                        ArrayList<UpcomingWeekends> weekends = new ArrayList<>();
+                        List<Holidays> holidays = response.body();
+                        for (Holidays holiday: holidays){
+
+                            String day = holiday.getDay();
+                            String name = holiday.getName();
+                            String type = holiday.getType();
+                            String date = holiday.getDate();
+                            String month = holiday.getMonth();
+                            weekends.add(new UpcomingWeekends(month, date, day, name, type));
+                        }
+
+                        animationView.setVisibility(View.GONE);
+                        mMainLayout.setVisibility(View.VISIBLE);
+                        mAdapter.initData(weekends);
+                    }
+
+                    @Override
+                    public void onFailure(retrofit2.Call<List<Holidays>> call, Throwable t) {
+                        Log.e("Request Failed", "Message : " + t.getMessage());
+                        mHandler.post(() -> networkError());
+                    }
+                });
     }
 
     private void networkError() {

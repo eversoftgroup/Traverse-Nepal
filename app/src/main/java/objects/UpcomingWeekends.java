@@ -6,7 +6,7 @@ import java.util.Date;
 public class UpcomingWeekends implements Serializable {
 
     private String mMonth;
-    private int mDate;
+    private String mDate;
     private String mDay;
     private String mName;
     private String mType;
@@ -23,7 +23,7 @@ public class UpcomingWeekends implements Serializable {
      * @param mName - name of the event
      * @param mType - type of the event
      */
-    public UpcomingWeekends(String mMonth, int mDate, String mDay, String mName, String mType) {
+    public UpcomingWeekends(String mMonth, String mDate, String mDay, String mName, String mType) {
         this.mMonth = mMonth;
         this.mDate = mDate;
         this.mDay = mDay;
@@ -35,7 +35,7 @@ public class UpcomingWeekends implements Serializable {
         return mMonth;
     }
 
-    public int getmDate() {
+    public String getmDate() {
         return mDate;
     }
 
