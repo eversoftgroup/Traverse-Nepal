@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="io.github.traverse_nepal.io.github.traverse_nepal.destinations.description.FinalCityInfoActivity"
-    tools:showIn="@layout/activity_city_info">
+   tools:showIn="@layout/activity_city_info">
 
     <LinearLayout
         android:layout_width="match_parent"

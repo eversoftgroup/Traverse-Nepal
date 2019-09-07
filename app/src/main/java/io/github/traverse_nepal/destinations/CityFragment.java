@@ -65,6 +65,18 @@ import static utils.Constants.SPOTLIGHT_SHOW_COUNT;
 import static utils.Constants.USER_TOKEN;
 
 public class CityFragment extends Fragment implements TravelmateSnackbars {
+/*
+
+    public City(@NonNull String mId, String mAvatar, String mNickname, int funFactsCount,
+                int color, List<String> interests)
+*/
+    List <String> dummyData = Arrays.asList("Hello"," Hello2", " Hello3");
+    public List<City> CityList = new ArrayList<City>(){};
+    City city = new  City("1"," http://www.baltana.com/download/28193/480x640/crop/qutub-minar-new-delhi-tourist-place-wallpaper-28427.jpg", "Avatar1", 1, 2131099806 );
+    City city1 = new  City("2"," http://wallpaperswide.com/download/bangalore-wallpaper-480x640.jpg", "Avatar3", 1, 2131099800);
+
+
+
 
     private static final String TAG = "CityFragment";
 
@@ -164,7 +176,10 @@ public class CityFragment extends Fragment implements TravelmateSnackbars {
         super.onViewCreated(view, savedInstanceState);
 
         mCities.clear();
-        mCities = new ArrayList<>(Arrays.asList(mDatabase.cityDao().loadAll()));
+        CityList.add(city);
+        CityList.add(city1);
+        mCities = new ArrayList(CityList);
+        Log.d("Prabhuu" ,mCities.toString());
         mInterests = new ArrayList<>(Arrays.asList(
                 mActivity.getString(R.string.interest_know_more),
                 mActivity.getString(R.string.interest_weather),
@@ -255,7 +270,7 @@ public class CityFragment extends Fragment implements TravelmateSnackbars {
      * Check time more than 24 hours
      **/
     private boolean is24Hours() {
-        long mMillisPerDay = 24 * 60 * 60 * 1000L;
+        long mMillisPerDay = 5 * 24 * 60 * 60 * 1000L;
         boolean mMoreThanDay = false;
         Date mCurrentDate = new Date();
         try {

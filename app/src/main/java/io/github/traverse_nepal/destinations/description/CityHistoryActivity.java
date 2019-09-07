@@ -66,6 +66,7 @@ public class CityHistoryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setTitle(R.string.title_activity_city_history);
+
     }
 
     /**
@@ -75,50 +76,60 @@ public class CityHistoryActivity extends AppCompatActivity {
 
         animationView.playAnimation();
         Handler handler = new Handler(Looper.getMainLooper());
+
+        CityHistoryListItem city = new CityHistoryListItem("Hello world", "Hello world text here....");
+        mCityHistory.add(city);
+        CityHistoryListItem city1 = new CityHistoryListItem("2nd data", "This is second data");
+        mCityHistory.add(city1);
+
+        listView.setAdapter(new CityHistoryAdapter(CityHistoryActivity.this, mCityHistory));
+        animationView.setVisibility(GONE);
+
         String uri;
         uri = API_LINK_V2 + "get-city-information/" + mCity.getId();
+
         Log.v("EXECUTING", uri);
 
-        //Set up client
-        OkHttpClient client = new OkHttpClient();
-        //Execute request
-        Request request = new Request.Builder()
-                .header("Authorization", "Token " + mToken)
-                .url(uri)
-                .build();
-        //Setup callback
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("Request Failed", "Message : " + e.getMessage());
-                handler.post(() -> networkError());
-            }
-
-            @Override
-            public void onResponse(Call call, final Response response) throws IOException {
-                final String res = Objects.requireNonNull(response.body()).string();
-                handler.post(() -> {
-                    try {
-                        JSONObject object = new JSONObject(res);
-                        JSONArray keys = object.names();
-                        for (int i = 0; i < keys.length(); i++) {
-                            String heading = keys.getString(i);
-                            String text = object.getString(heading);
-                            if (!text.equals("")) {
-                                CityHistoryListItem city = new CityHistoryListItem(heading, text);
-                                mCityHistory.add(city);
-                            }
-                        }
-                        listView.setAdapter(new CityHistoryAdapter(CityHistoryActivity.this,
-                                mCityHistory));
-                        animationView.setVisibility(GONE);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                        Log.e("ERROR : ", "Message : " + e.getMessage());
-                    }
-                });
-            }
-        });
+       // Set up client
+//        OkHttpClient client = new OkHttpClient();
+//        //Execute request
+//        Request request = new Request.Builder()
+//                .header("Authorization", "Token " + mToken)
+//                .url(uri)
+//                .build();
+//        //Setup callback
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                Log.e("Request Failed", "Message : " + e.getMessage());
+//                handler.post(() -> networkError());
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, final Response response) throws IOException {
+//                final String res = Objects.requireNonNull(response.body()).string();
+//                handler.post(() -> {
+//                    try {
+//                        JSONObject object = new JSONObject(res);
+//                        JSONArray keys = object.names();
+//                        for (int i = 0; i < keys.length(); i++) {
+//                            String heading = keys.getString(i);
+//                            String text = object.getString(heading);
+//                            if (!text.equals("")) {
+//                                CityHistoryListItem city = new CityHistoryListItem(heading, text);
+//                                mCityHistory.add(city);
+//                            }
+//                        }
+//                        listView.setAdapter(new CityHistoryAdapter(CityHistoryActivity.this,
+//                                mCityHistory));
+//                        animationView.setVisibility(GONE);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                        Log.e("ERROR : ", "Message : " + e.getMessage());
+//                    }
+//                });
+//            }
+//        });
     }
 
     @Override
