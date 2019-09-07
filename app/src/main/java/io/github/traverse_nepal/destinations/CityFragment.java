@@ -72,8 +72,8 @@ public class CityFragment extends Fragment implements TravelmateSnackbars {
 */
     List <String> dummyData = Arrays.asList("Hello"," Hello2", " Hello3");
     public List<City> CityList = new ArrayList<City>(){};
-    City city = new  City("1"," http://www.baltana.com/download/28193/480x640/crop/qutub-minar-new-delhi-tourist-place-wallpaper-28427.jpg", "Avatar1", 1, 2131099806 );
-    City city1 = new  City("2"," http://wallpaperswide.com/download/bangalore-wallpaper-480x640.jpg", "Avatar3", 1, 2131099800);
+    City city = new  City("1"," http://www.baltana.com/download/28193/480x640/crop/qutub-minar-new-delhi-tourist-place-wallpaper-28427.jpg", "Pokhara", 1, 2131099806 );
+    City city1 = new  City("2"," http://wallpaperswide.com/download/bangalore-wallpaper-480x640.jpg", "Kathmandu", 1, 2131099800);
 
 
 

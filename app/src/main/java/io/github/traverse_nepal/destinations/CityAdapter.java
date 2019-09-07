@@ -57,7 +57,7 @@ class CityAdapter extends BaseFlipAdapter<City> {
             case 1:
                 Picasso.with(mContext).
                         load(city1.getAvatar()).
-                        placeholder(R.drawable.placeholder_image).
+                        placeholder(R.drawable.background_01).
                         into(holder.leftAvatar);
                 holder.left.setText(city1.getNickname());
 
@@ -65,7 +65,7 @@ class CityAdapter extends BaseFlipAdapter<City> {
                     holder.right.setText(city2.getNickname());
                     Picasso.with(mContext).
                             load(city2.getAvatar()).
-                            placeholder(R.drawable.placeholder_image).
+                            placeholder(R.drawable.background_02).
                             into(holder.rightAvatar);
                 }
                 break;
